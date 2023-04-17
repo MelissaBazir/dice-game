@@ -16,12 +16,14 @@ p {
     margin: auto;
 }
 
-.container {
+.container-fluid {
+    position: relative;
     width: 100vw;
     height: 100vh;
-    
+    padding: 0;
 }
 
+/* START OF PLAYER STYLE */
 .player {
     width: 50vw;
     height: 100vh;
@@ -58,3 +60,27 @@ p {
 .current-score-count {
     font-size: 2em;
 }
+
+/* END OF PLAYER STYLE */
+
+/* START OF SETTINGS STYLE */
+.settings {
+    position: absolute;
+    top: -3vh;
+    left: 47vw;
+    z-index: 2;
+    width: 33vw;
+    height: 100vh;
+}
+
+.dice {
+    width: 70px;
+    height: 70px;
+    background-color: aliceblue;
+    box-shadow: 10px 5px 5px rgb(239, 238, 238);
+}
+
+.bi-plus-circle, .bi-arrow-repeat, .bi-box-arrow-in-down {
+    cursor: pointer;
+}
+/* END OF SETTINGS STYLE */

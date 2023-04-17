@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid d-flex">
             <div class="player one bg-body-secondary">
                 <div
                     class="score d-flex flex-column align-items-center justify-content-evenly"
@@ -33,16 +33,71 @@
                             <p>player 1</p>
                             <div class="active bg-danger"></div>
                         </div>
-                        <div class="global-score-count text-danger d-flex justify-content-center">0</div>
+                        <div
+                            class="global-score-count text-danger d-flex justify-content-center"
+                        >
+                            0
+                        </div>
                     </div>
-                    <div class="current-score-display bg-danger d-flex flex-column align-items-center">
+                    <div
+                        class="current-score-display bg-danger d-flex flex-column align-items-center"
+                    >
+                        <p>current</p>
+                        <div class="current-score-count text-white" id="current-score-1">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings d-flex flex-column justify-content-evenly">
+                <div class="new-game">
+                    <p>
+                        <i
+                            class="bi bi-plus-circle text-danger"
+                            id="new-game"
+                        ></i>
+                        new game
+                    </p>
+                </div>
+                <div class="dice">1</div>
+                <div class="current-game-settings">
+                    <p>
+                        <i
+                            class="bi bi-arrow-repeat text-danger"
+                            id="roll-dice"
+                        ></i>
+                        roll dice
+                    </p>
+                    <p>
+                        <i
+                            class="bi bi-box-arrow-in-down text-danger"
+                            id="hold"
+                        ></i>
+                        hold
+                    </p>
+                </div>
+            </div>
+            <div class="player two">
+                <div
+                    class="score d-flex flex-column align-items-center justify-content-evenly"
+                >
+                    <div class="global-score-display">
+                        <div class="name d-flex align-items-center">
+                            <p>player 2</p>
+                            <div class="active bg-danger"></div>
+                        </div>
+                        <div
+                            class="global-score-count text-danger d-flex justify-content-center"
+                        >
+                            0
+                        </div>
+                    </div>
+                    <div
+                        class="current-score-display bg-danger d-flex flex-column align-items-center"
+                    >
                         <p>current</p>
                         <div class="current-score-count text-white">0</div>
                     </div>
                 </div>
             </div>
-            <div class="settings"></div>
-            <div class="player two"></div>
         </div>
         <script src="./script.js"></script>
         <script
