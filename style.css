@@ -1,5 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: 'lato';
+    text-transform: uppercase;
+}
+
+p {
+    margin: auto;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.player {
+    width: 50vw;
+    height: 100vh;
+}
+
+.score {
+    height: 100vh;
+    
+}
+.global-score-display {
+    width: 25vw;
+}
+
+.name p {
+    font-size: 3em;
+}
+.active {
+    width: 1vw;
+    height: 1vh;
+    border-radius: 100%;
+}
+
+.global-score-count {
+    margin: auto;
+    font-size: 5em;
+    font-weight: lighter;
+}
+
+.current-score-display {
+    width: 15vw;
+    height: 7vh;
+}
+
+.current-score-count {
+    font-size: 2em;
+}
