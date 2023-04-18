@@ -1,31 +1,41 @@
-let globalScore1 = document.querySelector('#global-score-1')
-let globalScore2 = document.querySelector('#global-score-2')
-let currentScore1 = document.querySelector('#current-score-1')
-let currentScore2 = document.querySelector('#current-score-2')
-let player1 = document.querySelector('.one')
-let player2 = document.querySelector('.two')
+let globalScores = document.querySelectorAll('.global-score-count')
+let currentScores = document.querySelectorAll('.current-score-count')
+let players = document.querySelectorAll('.player')
+const newGameBtn = document.querySelector('#new-game')
+const rollDiceBtn = document.querySelector('#roll-dice')
+const holdBtn = document.querySelector('#hold')
 
-const reset = () => {
-    //reset all scores to 0
-    globalScore1 = 0
-    globalScore2 = 0
-    currentScore1 = 0
-    currentScore2 = 0
+//reset a score to 0
+const reset = (score) => {
+    score = 0
 }
 
-const resetCurrent = (player) => {
-    switch (player) {
-        case 'one':
-            currentScore1 = 0
-            break
-        case 'two':
-            currentScore2 = 0
-            break
-        default:
-            console.log('joueur non valide')
+// add points to the score of a player
+const addPoints = (points, score, player) => {
+    score[players.indexOf(player)] += points
+}
+
+// change the active player
+const changePlayer = () => {
+    players.forEach((player) => {
+        player.classList.toggle('.active')
+    })
+}
+
+// roll dice
+const rollDice = () => {
+    // get a random number between 1 and 6
+    let numberDice = Math.floor(Math.random() * 6) + 1
+    // get the current player
+    let player = players[0].classList.contains('.active')
+        ? players[0]
+        : players[1]
+    // if number not 1, add the number to current score
+    // if number is 1, set current score to 0 and change player
+    if (numberDice !== 1) {
+        addPoints(numberDice, currentScores, player)
+    } else {
+        reset(currentScores[players.indexOf(player)])
+        changePlayer()
     }
-}
-
-const changePlayer = (player) => {
-    player.classList.toggle('.active')
 }
