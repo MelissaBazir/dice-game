@@ -1,6 +1,6 @@
 let globalScores = document.querySelectorAll('.global-score-count')
 let currentScores = document.querySelectorAll('.current-score-count')
-let players = document.querySelectorAll('.player')
+let players = document.querySelectorAll('.players')
 let dice = document.querySelector('#dice')
 let activePlayer = 0
 let current_score = 0
@@ -33,12 +33,12 @@ const changePlayer = () => {
     current_score = 0
     displayElement(current_score, currentScores[activePlayer])
     players.forEach((player) => {
-        player.classList.toggle('.active')
+        player.classList.toggle('active')
     })
     activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0)
 }
 
-// roll dice
+// roll dice function
 const rollDice = () => {
     // get a random number between 1 and 6, then display it in dice
     let numberDice = Math.floor(Math.random() * 6) + 1
@@ -53,7 +53,7 @@ const rollDice = () => {
     }
 }
 
-//hold
+//hold function
 const hold = () => {
     // get the current score and send it to global score
     global_score[activePlayer] += current_score
