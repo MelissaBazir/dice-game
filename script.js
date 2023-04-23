@@ -3,11 +3,12 @@ let currentScores = document.querySelectorAll('.current-score-count')
 let players = document.querySelectorAll('.player')
 let dice = document.querySelector('.dice')
 let activePlayer = 0
-let current_score = 0
+let current_score = 98
 let global_score = [0, 0]
 const newGameBtn = document.querySelector('#new-game')
 const rollDiceBtn = document.querySelector('#roll-dice')
 const holdBtn = document.querySelector('#hold')
+const winningModal = new bootstrap.Modal('#winning-modal')
 
 // display an element on the page
 const displayElement = (element, tagName) => {
@@ -57,8 +58,15 @@ const hold = () => {
     // get the current score and send it to global score
     global_score[activePlayer] += current_score
     displayElement(global_score[activePlayer], globalScores[activePlayer])
-    // change player
-    changePlayer()
+    if (global_score[activePlayer] >= 100) {
+        document.querySelector('.modal-title').textContent = `Player ${
+            activePlayer + 1
+        } wins`
+        winningModal.show()
+    } else {
+        // change player
+        changePlayer()
+    }
 }
 
 // on new game click, a new game is initialized
