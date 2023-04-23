@@ -76,10 +76,15 @@ p {
 .dice {
     width: 70px;
     height: 70px;
-    background-color: aliceblue;
-    box-shadow: 10px 5px 5px rgb(239, 238, 238);
+    border-radius: 7px;
+    background-color: white;
+    
 }
 
+.dice img {
+    width: 100%;
+    box-shadow: 10px 5px 5px rgb(239, 238, 238);
+}
 .bi-plus-circle, .bi-arrow-repeat, .bi-box-arrow-in-down {
     cursor: pointer;
 }

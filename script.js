@@ -1,9 +1,9 @@
 let globalScores = document.querySelectorAll('.global-score-count')
 let currentScores = document.querySelectorAll('.current-score-count')
 let players = document.querySelectorAll('.player')
-let dice = document.querySelector('.dice')
+let dice = document.querySelector('#dice')
 let activePlayer = 0
-let current_score = 98
+let current_score = 0
 let global_score = [0, 0]
 const newGameBtn = document.querySelector('#new-game')
 const rollDiceBtn = document.querySelector('#roll-dice')
@@ -42,7 +42,7 @@ const changePlayer = () => {
 const rollDice = () => {
     // get a random number between 1 and 6, then display it in dice
     let numberDice = Math.floor(Math.random() * 6) + 1
-    displayElement(numberDice, dice)
+    dice.setAttribute('src', `./images/dice/dice_${numberDice}.png`)
     // if number not 1, add the number to current score, then display it
     // if number is 1, set current score to 0 and change player
     if (numberDice !== 1) {
