@@ -24,12 +24,12 @@ const initGame = () => {
 
 // change the active player
 const changePlayer = () => {
+    current_score = 0
+    displayElement(current_score, currentScores[activePlayer])
     players.forEach((player) => {
         player.classList.toggle('.active')
     })
     activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0)
-    current_score = 0
-    displayElement(current_score, currentScores[activePlayer])
 }
 
 // roll dice
@@ -54,9 +54,10 @@ const rollDice = () => {
 //hold
 const hold = () => {
     // get the current score and send it to global score
-    addPoints(currentScores, globalScores, activePlayer)
+    globalScores[activePlayer] += current_score
     // set the current score to 0
     // change player
+    changePlayer()
 }
 
 // on new game click, a new game is initialized
