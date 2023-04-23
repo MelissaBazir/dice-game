@@ -18,7 +18,11 @@ const displayElement = (element, tagName) => {
 const initGame = () => {
     current_score = 0
     activePlayer = 0
+    global_score = [0, 0]
     currentScores.forEach((score) => {
+        score.textContent = 0
+    })
+    globalScores.forEach((score) => {
         score.textContent = 0
     })
 }
