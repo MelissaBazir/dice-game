@@ -58,11 +58,12 @@ const hold = () => {
     // get the current score and send it to global score
     global_score[activePlayer] += current_score
     displayElement(global_score[activePlayer], globalScores[activePlayer])
-    if (global_score[activePlayer] >= 100) {
+    if (global_score[activePlayer] >= 100) {  // Winning score
         document.querySelector('.modal-title').textContent = `Player ${
             activePlayer + 1
         } wins`
         winningModal.show()
+        confetti()
     } else {
         // change player
         changePlayer()
@@ -83,5 +84,3 @@ rollDiceBtn.addEventListener('click', () => {
 holdBtn.addEventListener('click', () => {
     hold()
 })
-
-// when a player scores 100 points, he wins => to be defined (modal window)

@@ -26,16 +26,16 @@
         <div class="modal" tabindex="-1" id="winning-modal">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
+                    <div class="modal-header d-flex justify-content-center">
+                        <h5 class="modal-title text-danger"></h5>
                         <button
                             type="button"
                             class="btn-close"
                             data-bs-dismiss="modal"
-                            aria-label="Close"
+                            aria-label="close"
                         ></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body d-flex justify-content-center">
                         <p>Click on New Game button to play again</p>
                     </div>
                     <div class="modal-footer">
@@ -80,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            <div class="settings d-flex flex-column justify-content-evenly">
+            <div class="settings d-flex flex-column justify-content-evenly align-items-center m-auto">
                 <div class="new-game">
                     <p>
                         <i
@@ -90,7 +90,9 @@
                         new game
                     </p>
                 </div>
-                <div class="dice"><img src="./images/dice/dice_1.png" alt="" id="dice"></div>
+                <div class="dice">
+                    <img src="./images/dice/dice_1.png" alt="" id="dice" />
+                </div>
                 <div class="current-game-settings">
                     <p>
                         <i
@@ -138,10 +140,11 @@
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
         <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"
         ></script>
         <script src="./script.js"></script>
     </body>
