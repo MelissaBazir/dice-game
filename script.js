@@ -9,6 +9,9 @@ const newGameBtn = document.querySelector('#new-game')
 const rollDiceBtn = document.querySelector('#roll-dice')
 const holdBtn = document.querySelector('#hold')
 const winningModal = new bootstrap.Modal('#winning-modal')
+const sizeModal = new bootstrap.Modal('#size-modal')
+
+
 
 // display an element on the page
 const displayElement = (element, tagName) => {
@@ -58,12 +61,15 @@ const hold = () => {
     // get the current score and send it to global score
     global_score[activePlayer] += current_score
     displayElement(global_score[activePlayer], globalScores[activePlayer])
-    if (global_score[activePlayer] >= 100) {  // Winning score
+    if (global_score[activePlayer] >= 1) {  // Winning score
         document.querySelector('.modal-title').textContent = `Player ${
             activePlayer + 1
         } wins`
         winningModal.show()
-        confetti()
+        confetti({
+            particleCount: 150,
+            zIndex: 1100
+        })
     } else {
         // change player
         changePlayer()
@@ -84,3 +90,11 @@ rollDiceBtn.addEventListener('click', () => {
 holdBtn.addEventListener('click', () => {
     hold()
 })
+
+
+// displays a modal if size is less than 1000 px
+if (window.matchMedia("(max-width: 899px)").matches) {
+    sizeModal.show()
+}
+    
+

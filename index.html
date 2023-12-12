@@ -50,13 +50,40 @@
                 </div>
             </div>
         </div>
+        <div class="modal" tabindex="-1" id="size-modal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-center">
+                        <h5 class="modal-title text-danger">Screen size too small</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="close"
+                        ></button>
+                    </div>
+                    <div class="modal-body d-flex justify-content-center">
+                        <p>Please play on tablet display size at least</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid d-flex">
             <div class="player one bg-body-secondary">
                 <div
                     class="score d-flex flex-column align-items-center justify-content-evenly"
                 >
                     <div class="global-score-display">
-                        <div class="name d-flex align-items-center">
+                        <div class="name d-flex align-items-center justify-content-center">
                             <p>player 1</p>
                             <div class="players active bg-danger"></div>
                         </div>
@@ -115,7 +142,7 @@
                     class="score d-flex flex-column align-items-center justify-content-evenly"
                 >
                     <div class="global-score-display">
-                        <div class="name d-flex align-items-center">
+                        <div class="name d-flex align-items-center justify-content-center">
                             <p>player 2</p>
                             <div class="players bg-danger" data-active></div>
                         </div>

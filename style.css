@@ -89,3 +89,18 @@ p {
     cursor: pointer;
 }
 /* END OF SETTINGS STYLE */
+
+#confetti-canvas {
+    position: fixed;
+    z-index: 2000;
+}
+
+/* @media screen and (min-width: 900px){
+    #size-modal {
+        display: none;
+    }
+
+    .settings {
+        display: block;
+    }
+} */
